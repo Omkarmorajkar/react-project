@@ -13,7 +13,7 @@ const Applayout = () => {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
       );
       if (!res.ok) {
         throw new Error("Failed to fetch data");
