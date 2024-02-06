@@ -13,7 +13,7 @@ function SearchBox({ onSearch }) {
 
   return (
     <div className="flex justify-between items-center p-2 bg-gray-400">
-      <h1 className="text-2xl font-bold ">Cocktails</h1>
+      <h1 className="text-2xl font-bold text-white">Cocktails</h1>
       <div className="gap-4 w-full flex justify-center">
         <input
           type="text"

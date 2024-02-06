@@ -6,16 +6,13 @@ function ModalPopup({ cocktail, onClose }) {
   const [favorites, setFavorites] = useState(false);
 
   useEffect(() => {
-    // Load favorites from local storage on component mount
     const existingFavorites =
       JSON.parse(localStorage.getItem("favorites")) || [];
 
-    // Check if the cocktail is already in favorites
     const isAlreadyInFavorites = existingFavorites.some(
       (fav) => fav.idDrink === cocktail.idDrink
     );
 
-    // Set the initial state of favorites based on whether the cocktail is in favorites
     setFavorites(isAlreadyInFavorites);
   }, [cocktail]);
 
