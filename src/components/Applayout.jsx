@@ -41,11 +41,6 @@ const Applayout = () => {
     setSelectedCocktail(null);
   };
 
-  const handleSaveToFavorites = (cocktail) => {
-    // Implement saving to local storage
-    console.log("Saved to favorites:", cocktail);
-  };
-
   if (loading) {
     return (
       <div className="w-full h-screen flex justify-center items-center text-3xl font-bold">
@@ -79,11 +74,7 @@ const Applayout = () => {
           onCocktailClick={handleCocktailClick}
         />
         {selectedCocktail && (
-          <ModalPopup
-            cocktail={selectedCocktail}
-            onClose={handleCloseModal}
-            onSaveToFavorites={handleSaveToFavorites}
-          />
+          <ModalPopup cocktail={selectedCocktail} onClose={handleCloseModal} />
         )}
       </div>
     </>

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 function ModalPopup({ cocktail, onClose }) {
+  console.log("cocktail data " + cocktail);
   const [favorites, setFavorites] = useState(false);
 
   useEffect(() => {
