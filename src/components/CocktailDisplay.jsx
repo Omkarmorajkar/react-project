@@ -2,7 +2,7 @@ import React from "react";
 
 function CocktailDisplay({ cocktails, onCocktailClick }) {
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 p-4">
       {cocktails.map((cocktail) => (
         <div
           key={cocktail.idDrink}

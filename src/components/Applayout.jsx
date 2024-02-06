@@ -56,25 +56,37 @@ const Applayout = () => {
 
   if (error) {
     return (
-      <div className="w-full h-screen flex justify-center items-center text-red-500">
+      <div className="w-full h-screen flex justify-center items-center text-red-500 font-bold">
         {error}
       </div>
     );
   }
 
+  if (data.length === 0) {
+    return (
+      <div className="w-full h-screen flex justify-center items-center text-gray-500 font-bold">
+        No results found.
+      </div>
+    );
+  }
+
   return (
-    <div className="mx-auto ">
-      {/* <h1 className="text-4xl font-bold mb-4">Cocktails</h1> */}
+    <>
       <SearchBox onSearch={fetchData} />
-      <CocktailDisplay cocktails={data} onCocktailClick={handleCocktailClick} />
-      {selectedCocktail && (
-        <ModalPopup
-          cocktail={selectedCocktail}
-          onClose={handleCloseModal}
-          onSaveToFavorites={handleSaveToFavorites}
+      <div className="mx-auto ">
+        <CocktailDisplay
+          cocktails={data}
+          onCocktailClick={handleCocktailClick}
         />
-      )}
-    </div>
+        {selectedCocktail && (
+          <ModalPopup
+            cocktail={selectedCocktail}
+            onClose={handleCloseModal}
+            onSaveToFavorites={handleSaveToFavorites}
+          />
+        )}
+      </div>
+    </>
   );
 };
 
